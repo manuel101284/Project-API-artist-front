@@ -1,0 +1,178 @@
+{
+    "artists": [
+        {
+            "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",
+            "artistGenre": "Blues",
+            "artistName": "Eric",
+            "artistLastname": "Clapton",
+            "artistCountry": "Inglaterra"
+        },
+        {
+            "id": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
+            "artistGenre": "Reggae",
+            "artistName": "Robert",
+            "artistLastname": "Marley",
+            "artistCountry": "Jamaica"
+        },
+        {
+            "id": "d8be2362-7b68-4ea4-a1f6-03f8bc4eede7",
+            "artistGenre": "Rock",
+            "artistName": "U2",
+            "artistLastname": "",
+            "artistCountry": "Irlanda"
+        },
+        {
+            "id": "a24d2618-01d1-4682-9288-8de1343e53c7",
+            "artistGenre": "Blues",
+            "artistName": "Joe",
+            "artistLastname": "Bonamasa",
+            "artistCountry": "Estados Unidos"
+        },
+        {
+            "id": "8f8318f8-b869-4e9d-bb78-88010193563a",
+            "artistGenre": "Blues",
+            "artistName": "The Black Keys",
+            "artistLastname": "",
+            "artistCountry": "Estados Unidos"
+        },
+        {
+            "id": "0a5948af-5185-4266-8c4b-818889657e9d",
+            "artistGenre": "Pop",
+            "artistName": "The Weekend",
+            "artistLastname": "",
+            "artistCountry": "Estados unidos"
+        },
+        {
+            "id": "3dc53bc8-27b8-4773-b85d-89f0a354d437",
+            "artistGenre": "Pop",
+            "artistName": "Dua",
+            "artistLastname": "Lipa",
+            "artistCountry": "Inglaterra"
+        },
+        {
+            "id": "6rf55jk8-19j8-5y2h-c23f-4d5g225se36d",
+            "artistGenre": "Pop",
+            "artistName": "Dua",
+            "artistLastname": "Lipa",
+            "artistCountry": "Inglaterra"
+        }
+    ],
+    "songs": [
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },
+        {
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },{
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },{
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        },{
+            "songId": "String",
+            "artistId": "String",
+            "songTitle": "String",
+            "songYear": "0000",
+            "songAlbum": "String"
+        }
+    ] 
+}

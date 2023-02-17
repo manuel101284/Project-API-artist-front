@@ -1,19 +1,38 @@
+const {v4: uuid} = require("uuid");
+const Artist = require("../database/Artist");
+
 const getAllArtists = () => {
-    return;
+    const allArtists = Artist.getAllArtists();
+    return allArtists;
 }
 
-const getOneArtist = () => {
-    return;
+const getOneArtist = (oneArtist) => {
+    const artist = Artist.getOneArtist(id);
+    return artist;
 }
 
-const createNewArtist = () => {
-    return;
+const createNewArtist = (newArtist) => {
+    const artistToInsert = {
+        ...newArtist,
+        id: uuid()
+    }
+    const createdArtist = Artist.createNewArtist(artistToInsert);
+    return createdArtist
 }
 
-const updateOneArtist = () => {
-    return;
+const updateOneArtist = (id, changesArtist) => {
+    const updatedArtist = Artist.updateOneArtist(id, changesArtist);
+    return updatedArtist;
 }
 
-const deleteOneArtist = () => {
-    return;
+const deleteOneArtist = (id) => {
+    Artist.deleteOneArtist(id);
+}
+
+module.exports = {
+    getAllArtists,
+    getOneArtist,
+    createNewArtist,
+    updateOneArtist,
+    deleteOneArtist
 }
