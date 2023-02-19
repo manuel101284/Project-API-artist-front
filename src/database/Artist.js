@@ -42,8 +42,7 @@ const getOneArtist = (artistId) => {
 // }
 const createNewArtist = (newArtist) => {
     const isAlreadyAdded =
-        DBMongo.artists.findIndex((artist) => artist.artistName === newArtist.artistName) > -1
-        ;
+        DBMongo.artists.findIndex((artist) => artist.artistName === newArtist.artistName) > -1;
 
     if (isAlreadyAdded) {
         return;

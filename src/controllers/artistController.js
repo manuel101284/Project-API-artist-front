@@ -17,18 +17,16 @@ const getAllArtists = (req, res) => {
 
 // This let view one specific document from a  collection from mongo compass
 const getOneArtist = (req, res) => {
-    const {
-        params: { artistId },
-    } = req;
+    const { artistId }= req.params;
 
     if (!artistId) {
         return;
     }
-    const oneArtist = artistServices.getOneArtist(artistId);
-    res.send({ status: "OK", data: oneArtist });
-    //res.send(`Get Artist ${req.params.artistId}`);
+    // const oneArtist = artistServices.getOneArtist(artistId);
+    // res.send({ status: "OK", data: oneArtist });
+    // //res.send(`Get Artist ${req.params.artistId}`);
 
-    Artist.findById(oneArtist, (err, result) => {
+    Artist.findById(artistId, (err, result) => {
         if (err) throw new Error(err);
         res.json(result);
         console.log(result)

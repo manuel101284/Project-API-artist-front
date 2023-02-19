@@ -1,0 +1,18 @@
+### 
+GET  http://localhost:3000/api/v1/artists HTTP/1.1
+//Content-Type: application/json
+
+###
+GET  http://localhost:3000//api/v1/artists/63eee6fb21e1be49247c6a53 HTTP/1.1
+//Content-Type: application/json
+
+###
+POST http://localhost:3000/api/v1/artists/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "artistGenre": "Rock",
+    "artistName": "Zoe",
+    "artistLastname": "",
+    "artistCountry": "Mexico"
+}
