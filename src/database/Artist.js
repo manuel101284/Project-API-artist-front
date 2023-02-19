@@ -1,36 +1,62 @@
 const DB = require("./db.json");
 const { saveToDataBase } = require("./utils");
+const DBMongo = require("../models/modelArtist.js"); // Brings the database model for artist
 
+
+
+// const getAllArtists = () => {
+//     return DB.artists;
+// }
 const getAllArtists = () => {
-    return DB.artists;
+    return DBMongo.artists;
 }
 
-const getOneArtist = (id) => {
-    const artist = DB.artists.find((artist) => artist.id === id);
+// const getOneArtist = (artistId) => {
+//     const artist = DB.artists.find((artist) => artist.id === artistId);
 
-    if (!artist)  {
+//     if (!artist)  {
+//         return;
+//     }
+//     return artist;
+// }
+const getOneArtist = (artistId) => {
+    const artist = DBMongo.artists.find((artist) => artist.id === artistId)
+    if (!artist) {
         return;
     }
     return artist;
 }
 
+// const createNewArtist = (newArtist) => {
+//     const isAlreadyAdded =
+//         DB.artists.findIndex((artist) => artist.artistName === newArtist.artistName) > -1
+//         ;
+
+//     if(isAlreadyAdded) {
+//         return;
+//     }
+
+//     DB.artists.push(newArtist);
+//     saveToDataBase(DB);
+//     return newArtist;
+// }
 const createNewArtist = (newArtist) => {
     const isAlreadyAdded =
-        DB.artists.findIndex((artist) => artist.artistName === newArtist.artistName) > -1
+        DBMongo.artists.findIndex((artist) => artist.artistName === newArtist.artistName) > -1
         ;
 
-    if(isAlreadyAdded) {
+    if (isAlreadyAdded) {
         return;
     }
 
-    DB.artists.push(newArtist);
-    saveToDataBase(DB);
+    DBMongo.artists.push(newArtist);
+    saveToDataBase(DBMongo);
     return newArtist;
 }
 
-const updateOneArtist = (id, artistChanges) => {
-    const indexForUpdated = DB.artists.findIndex(
-        (artist) => (artist.id = artist)
+const updateOneArtist = (artistId, artistChanges) => {
+    const indexForUpdated = DBMongo.artists.findIndex(
+        (artist) => (artist.id = artistId)
     );
 
     if (indexForUpdated === -1) {
@@ -38,26 +64,26 @@ const updateOneArtist = (id, artistChanges) => {
     }
 
     const updatedArtist = {
-        ...DB.artists[indexForUpdated],
+        ...DBMongo.artists[indexForUpdated],
         ...artistChanges,
     }
 
     DB.artists[indexForUpdated] = updatedArtist;
-    saveToDataBase(DB);
+    saveToDataBase(DBMongo);
     return updatedArtist;
 }
 
-const deleteOneArtist = (id) => {
-    const indexForDeleted = DB.artists.findIndex(
-        (artist) => artist.id === id
+const deleteOneArtist = (artistId) => {
+    const indexForDeleted = DBMongo.artists.findIndex(
+        (artist) => artist.id === artistId
     );
 
     if ( indexForDeleted === -1 ) {
         return;
     };
 
-    DB.artists.splice(indexForDeleted, 1);
-    saveToDataBase(DB);
+    DBMongo.artists.splice(indexForDeleted, 1);
+    saveToDataBase(DBMongo);
 }
 
 module.exports = { getAllArtists, getOneArtist, createNewArtist, updateOneArtist, deleteOneArtist };

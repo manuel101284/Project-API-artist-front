@@ -1,22 +1,57 @@
-const artistService = require("../services/artistService");
+const artistServices = require("../services/artistServices");
+const Artist = require("../models/modelArtist")
 
+// This let view all documents in a collection from mongo compass
 const getAllArtists = (req, res) => {
-    const allArtists = artistService.getAllArtists(); 
-    res.send({ status: "OK", data: allArtists });
-}
+    Artist.find((err, result) => {
+        if(err) throw new Error(err);
+        res.json(result);
+        console.log(result)
+    })
+} 
+// const getAllArtists = (req, res) => {
+//     const allArtists = artistService.getAllArtists();
+//     res.send({ status: "OK", data: allArtists });
+// }
 
+
+// This let view one specific document from a  collection from mongo compass
 const getOneArtist = (req, res) => {
     const {
-        params: { id },
+        params: { artistId },
     } = req;
 
-    if(!id) {
+    if (!artistId) {
         return;
     }
-    const artist = artistService.getOneArtist(id);
-    res.send({ status: "OK", data: artist });
+    const oneArtist = artistServices.getOneArtist(artistId);
+    res.send({ status: "OK", data: oneArtist });
     //res.send(`Get Artist ${req.params.artistId}`);
+
+    Artist.findById(oneArtist, (err, result) => {
+        if (err) throw new Error(err);
+        res.json(result);
+        console.log(result)
+    })
+    
+    // Artist.findById(oneArtist, (err, artist) => {
+    //     res.json(result);
+    //     console.log(result);
+    // })
 }
+
+// const getOneArtist = (req, res) => {
+//     const {
+//         params: { artistId },
+//     } = req;
+
+//     if (!artistId) {
+//         return;
+//     }
+//     const oneArtist = artistService.getOneArtist(artistId);
+//     res.send({ status: "OK", data: oneArtist });
+    //res.send(`Get Artist ${req.params.artistId}`);
+//}
 
 const createNewArtist = (req, res) => {
     const { body } = req;
@@ -36,35 +71,35 @@ const createNewArtist = (req, res) => {
         artistCountry: body.artistCountry
     }
     
-const createdArtist = artistService.createNewArtist(newArtist);
-    //res.send(`Create Artist ${req.params.artistId}`);
-    res.status(201).send({ status: "OK", data: createdArtist });
+    const createdArtist = artistServices.createNewArtist(newArtist);
+        //res.send(`Create Artist ${req.params.artistId}`);
+        res.status(201).send({ status: "OK", data: createdArtist });
 }
 
 const updateOneArtist = (req, res) => {
     const {
         body,
-        params: { id },
+        params: { artistId },
     } = req;
 
-    if (!id) {
+    if (!artistId) {
         return;
     }
 
-    const  updatedArtist = artistService.updateOneArtist(id, body);
+    const  updatedArtist = artistServices.updateOneArtist(artistId, body);
     res.send({ status: "OK", data: updatedArtist });
 }
 
 const deleteOneArtist = (req, res) => {
     const {
-        params: { id },
+        params: { artistId },
     } = req;
 
-    if (!id) {
+    if (!artistId) {
         return;
     }
 
-    artistService.deleteOneArtist(id);
+    artistServices.deleteOneArtist(artistId);
     res.status(204).send({ status: "OK" });
 }
 
