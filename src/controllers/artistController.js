@@ -52,26 +52,29 @@ const getOneArtist = (req, res) => {
 //}
 
 const createNewArtist = (req, res) => {
-    const { body } = req;
+    const newArtist = Artist(req.params);
 
-    if(
-        !body.artistGenre ||
-        !body.artistName ||
-        !body.artistLastname ||
-        !body.artistCountry
-    ) {
-        return;
-    }
-    const newArtist = {
-        artistGenre: body.artistGenre,
-        artistName: body.artistName,
-        artistLastname: body.artistLastname,
-        artistCountry: body.artistCountry
-    }
+    // if(
+    //     !body.artistGenre ||
+    //     !body.artistName ||
+    //     !body.artistLastname ||
+    //     !body.artistCountry
+    // ) {
+    //     return;
+    // }
+    // const newArtist = {
+    //     artistGenre: body.artistGenre,
+    //     artistName: body.artistName,
+    //     artistLastname: body.artistLastname,
+    //     artistCountry: body.artistCountry
+    // }
+    Artist.Save(newArtist)
+        .then((data) => res.json(data))
+        .catch((err) => res.json({message: err}));
     
-    const createdArtist = artistServices.createNewArtist(newArtist);
-        //res.send(`Create Artist ${req.params.artistId}`);
-        res.status(201).send({ status: "OK", data: createdArtist });
+    // const createdArtist = artistServices.createNewArtist(newArtist);
+    //     res.send(`Create Artist ${req.params.artistId}`);
+    //     res.status(201).send({ status: "OK", data: createdArtist });
 }
 
 const updateOneArtist = (req, res) => {

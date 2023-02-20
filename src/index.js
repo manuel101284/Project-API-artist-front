@@ -12,11 +12,11 @@ mongoose.set("strictQuery", true);
 
 const conecctionOptions = { useUnifiedTopology: true, useNewUrlParser: true }; // Conect to mongoDB
 
-app.use(express.json());
-app.use(bodyParser.json());
-app.use(cors());
-
 app.use("/api/v1/artists", v1ArtistRouter);
+
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(cors());
 
 // This let to conect the app with a mongoDB
 // mongoose.connect(process.env.MONGODB_URI)
@@ -26,8 +26,6 @@ app.use("/api/v1/artists", v1ArtistRouter);
 mongoose.connect("mongodb://127.0.0.1:27017/MusicDB", conecctionOptions)
     .then(() => console.log("The conection is OK"))
     .catch((err) => console.log(err));
-
-
 
 app.listen(port, () => {
     console.log(` The server is working on port ${port}`)
